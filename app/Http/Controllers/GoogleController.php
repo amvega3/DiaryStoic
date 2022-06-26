@@ -46,7 +46,6 @@ class GoogleController extends Controller
                     'google_id'=> $user->id,
                     'password' => 'admin',
                     'remember_token' => Str::random(10),
-                    'profile_photo_path' => $user->avatar
 
                 ]);
 

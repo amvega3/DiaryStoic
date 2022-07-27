@@ -1084,9 +1084,12 @@ select {
 .top-0 {
   top: 0px;
 }
+<<<<<<< HEAD
 .right-2 {
   right: 0.5rem;
 }
+=======
+>>>>>>> d49e8972a02e0f041be82dbb1aa6d30354fb7642
 .z-0 {
   z-index: 0;
 }

@@ -45,7 +45,6 @@ class GoogleController extends Controller
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'password' => 'admin',
-                    'remember_token' => Str::random(10),
 
                 ]);
 

@@ -12,6 +12,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+                'robot' : ['Roboto'],
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },

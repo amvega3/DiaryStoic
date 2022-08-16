@@ -12,5 +12,6 @@
           </div>
       </button>
     @endif
+    <x-carousel-item/>
     <span></span>
 </div>

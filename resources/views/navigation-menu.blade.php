@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-transparent bg-gradient-to-r from-blue-500 h-28 pt-2 w-full border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-[#FFC600] absolute bottom-0 bg-opacity-30 h-28 pt-2 w-full border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">

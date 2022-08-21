@@ -4,7 +4,7 @@
             display: none !important;
         }
     </style>
-    <div class="max-w-7xl mx-auto h-auto">
+    <div class="w-full mx-auto h-auto">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden font-robot uppercase border-b p-1 fixed top-0 right-0 px-6 pt-4 sm:block">

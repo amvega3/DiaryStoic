@@ -15,14 +15,9 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table-> foreignId('answers');
-            $table-> foreignId('users');
-            $table-> longText("question_1");
-            $table-> longText("question_2");
-            $table-> longText("question_3");
-            $table-> longText("question_4");
-            $table-> longText("question_5");
-            $table-> timestamps();
+            $table->longText("question");
+            $table->timestamps();
+
 
 
 

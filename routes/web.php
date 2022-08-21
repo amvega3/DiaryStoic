@@ -3,7 +3,7 @@
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\QuestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +29,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/rolesAdmin', [RoleController::class, 'index'])->name('roles');
+    Route::get('/questions', [QuestionController::class, 'index'])->name('questions');
+    
 });
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

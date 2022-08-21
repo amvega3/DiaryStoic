@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table-> foreignId('questions');
-            $table-> foreignId('users');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')-> references('id')->on('users')->onUpdate('cascade')->nullable();  
+            $table-> foreign('id')-> references('id')-> on('questions')->onUpdate('cascade')->nullable();
             $table-> longText("answer");
             $table-> timestamps();
 

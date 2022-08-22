@@ -24,5 +24,19 @@ class Questions extends Component
         $this->showingModal = true;   
         $this->showingModal = !$this->showingModal;           
     }
+    public function store()
+    {
+        // $this->validate();
+        Question::create([
+            'question' => $this->question,
 
+             
+        ]);
+        $this->default();
+
+    }
+    public function default(){
+
+        $this->reset(['questios','fecha','tipo','especie','raza','sexo','propietario','accion']);
+    }
 }

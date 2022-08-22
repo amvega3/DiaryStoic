@@ -10,6 +10,7 @@
    <x-jet-dialog-modal wire:model="showingModal" >
        <x-slot name="title">
            Modal custom title
+           odal custom title
        </x-slot>
 
        <x-slot name="content">

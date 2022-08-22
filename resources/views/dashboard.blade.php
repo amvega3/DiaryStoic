@@ -6,7 +6,7 @@
     </x-slot>
     <div>
         <div class="max-w-7xl mx-auto">
-            <div class="w-full  h-screen bg-black">
+            <div class="w-full h-screen bg-black">
                 <div class="overflow-hidden h-screen shadow-xl sm:rounded-lg">
                     @livewire('home')
 

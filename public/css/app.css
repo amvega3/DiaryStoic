@@ -1035,6 +1035,9 @@ select{
 .bottom-0{
   bottom: 0px;
 }
+.bottom-5{
+  bottom: 1.25rem;
+}
 .z-0{
   z-index: 0;
 }
@@ -1340,6 +1343,15 @@ select{
 }
 .origin-top-right{
   transform-origin: top right;
+}
+.origin-bottom{
+  transform-origin: bottom;
+}
+.origin-bottom-right{
+  transform-origin: bottom right;
+}
+.origin-bottom-left{
+  transform-origin: bottom left;
 }
 .translate-y-4{
   --tw-translate-y: 1rem;

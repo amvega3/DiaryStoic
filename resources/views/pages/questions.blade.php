@@ -1,3 +1,8 @@
+
 <x-app-layout>
-    @livewire('question')
+<div class = "bg-black">
+@livewire('questions') 
+
+</div>
+
 </x-app-layout>

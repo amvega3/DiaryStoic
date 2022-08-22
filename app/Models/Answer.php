@@ -10,6 +10,7 @@ class Answer extends Model
     use HasFactory;
     protected $fillable = [
         'answer',
+        'path',
       
     ];
     public function question()
@@ -18,6 +19,7 @@ class Answer extends Model
     }
     public function user() {
         return $this->belongsTo('App\Models\User');
-      }
+    }
+
 }
 

@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->foreignId('question_id');
             $table->foreign('user_id')-> references('id')->on('users')->onUpdate('cascade')->nullable();  
-            $table-> foreign('id')-> references('id')-> on('questions')->onUpdate('cascade')->nullable();
+            $table-> foreign('question_id')-> references('id')-> on('questions')->onUpdate('cascade')->nullable();
             $table-> longText("answer");
             $table-> timestamps();
+            $table-> longText(("pathaudio"));
 
         });
     }

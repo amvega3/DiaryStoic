@@ -10,7 +10,9 @@ class Answer extends Model
     use HasFactory;
     protected $fillable = [
         'answer',
-        'path',
+        'question_id',
+        'user_id',
+        'pathaudio',
       
     ];
     public function question()

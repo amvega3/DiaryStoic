@@ -5,6 +5,8 @@ use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AudioMcController;
+use App\Http\Controllers\AnswerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,7 @@ Route::middleware([
 
     Route::get('/rolesAdmin', [RoleController::class, 'index'])->name('roles');
     Route::get('/questions', [QuestionController::class, 'index'])->name('questions');
+    Route::get('/answers', [AnswerController::class, 'index'])->name('answers');
     Route::get('/audio-mc', [AudioMcController::class, 'index'])->name('audio-mc');
     
 });

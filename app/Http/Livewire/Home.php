@@ -8,7 +8,7 @@ class Home extends Component
 {
     public $readyToLoad = false;
     public $sms = '';
-    public $active = true;
+    public $active = false;
 
     public function render()
     {

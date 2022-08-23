@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@espe.com',
             'password' =>  bcrypt('admin')
         ]);
+        $this->call(LoadQuestion::class);   
     }
 }

@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -29,6 +30,9 @@ class User extends Authenticatable
         'password',
         'google_id'
     ];
+    public function answer() {
+        return $this->hasOne('App\Models\Question');
+      }
 
     /**
      * The attributes that should be hidden for serialization.

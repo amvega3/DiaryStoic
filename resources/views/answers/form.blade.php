@@ -1,16 +1,4 @@
-
-   <button class="bg-green-900 px-2 py-2 mx-auto border border-black rounded-xl " wire:click="$set('showingModal',true)">Ver</button>
-
-    <x-jet-dialog-modal wire:model="showingModal" >
-        <x-slot name="title">
-            Modal custom title
-        </x-slot>
-
-        <x-slot name="content">
-
-        <div class="container">
-
-         <!-- pregunta1  -->
+<!-- pregunta1  -->
 <div class="form-group">
 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="answer">
             
@@ -74,20 +62,4 @@ Pon lo que tu quieras
     </button>
       
     </div>
-
-
-        
-    </div>
-  
-        </x-slot>
-
-        
-        <x-slot name="footer">
-      
-      </x-slot>
-    </x-jet-dialog-modal>
-
-
-
-
 

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AnswerController extends Controller
+class AudioMcController extends Controller
 {
     public function index(){
-        return view('pages.answers');
+        return view('pages.audio');
     }
 }

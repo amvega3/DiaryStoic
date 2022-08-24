@@ -24,5 +24,5 @@ class Questions extends Component
         $this->showingModal = true;   
         $this->showingModal = !$this->showingModal;           
     }
-
+   
 }

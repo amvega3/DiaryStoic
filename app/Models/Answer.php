@@ -10,6 +10,9 @@ class Answer extends Model
     use HasFactory;
     protected $fillable = [
         'answer',
+        'question_id',
+        'user_id',
+        'pathaudio',
       
     ];
     public function question()
@@ -18,6 +21,7 @@ class Answer extends Model
     }
     public function user() {
         return $this->belongsTo('App\Models\User');
-      }
+    }
+
 }
 

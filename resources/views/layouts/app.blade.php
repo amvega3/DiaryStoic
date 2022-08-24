@@ -17,10 +17,14 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        
     </head>
     <body class="font-sans antialiased">
-        <x-jet-banner />
-
+  
+    <x-jet-banner />
+    <div class="container">
+    @yield('content')
+</div>
         <div class="min-h-screen bg-black">
             @livewire('navigation-menu')
             <main>
@@ -30,6 +34,7 @@
 
         @stack('modals')
 
-        @livewireScripts
+       
     </body>
+    @livewireScripts
 </html>

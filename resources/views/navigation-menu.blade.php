@@ -1,15 +1,7 @@
-<div class="absolute top-0 right-0 ">
-    <form method="POST" action="{{ route('logout') }}" x-data>
-        @csrf
 
-        <x-jet-responsive-nav-link class="text-[#FFC600] text-xl" href="{{ route('logout') }}"
-                       @click.prevent="$root.submit();">
-            {{ __('Log Out') }}
-        </x-jet-responsive-nav-link>
-    </form>
-</div>
-<nav x-data="{ open: false }" class="bg-[#FFC600] absolute bottom-0 bg-opacity-70 h-28 pt-2 w-full border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
+<nav x-data="{ open: false }" class="bg-[#FFC600]   border-t-2 fixed left-0 flex justify-center items-center
+text-white text-2xl  bottom-0 bg-opacity-70 h-28 pt-2 w-full border-b border-gray-100">  
+<!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">

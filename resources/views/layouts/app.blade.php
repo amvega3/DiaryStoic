@@ -21,9 +21,9 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-black">
+        <div">
             @livewire('navigation-menu')
-            <main>
+            <main class="bg-black">
                 {{ $slot }}
             </main>
         </div>

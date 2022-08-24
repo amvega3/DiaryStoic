@@ -5,10 +5,11 @@
         </h2>
     </x-slot>
     <div>
-        <div class="max-w-7xl mx-auto">
-            <div class="w-full h-screen bg-black">
-                <div class="overflow-hidden h-screen shadow-xl sm:rounded-lg">
-                    @livewire('home')
+        <div class="w-full mx-auto   ">
+            <div class="w-full  bg-black">
+                <div class="shadow-xl sm:rounded-lg mb-20 pb-10">
+                    @livewire('post')
+
 
                 </div>
             </div>

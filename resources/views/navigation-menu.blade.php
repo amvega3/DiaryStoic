@@ -8,9 +8,11 @@
         </x-jet-responsive-nav-link>
     </form>
 </div>
-<nav x-data="{ open: false }" class="bg-[#FFC600] absolute bottom-0 bg-opacity-70 h-28 pt-2 w-full border-b border-gray-100">
+
+<nav x-data="{ open: false }" class="bg-[#FFC600]  fixed left-0 flex items-center
+text-white text-2xl  bottom-0  h-28 w-full border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl  px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->

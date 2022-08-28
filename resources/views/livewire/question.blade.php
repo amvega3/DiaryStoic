@@ -1,4 +1,4 @@
-
+<!-- 
    <button class="bg-green-900 px-2 py-2 mx-auto border border-black rounded-xl " wire:click="$set('showingModal',true)">Ver</button>
 
     <x-jet-dialog-modal wire:model="showingModal" >
@@ -90,4 +90,4 @@ Pon lo que tu quieras
 
 
 
-
+ -->

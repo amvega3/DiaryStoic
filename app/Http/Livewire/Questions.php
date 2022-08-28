@@ -14,10 +14,19 @@ class Questions extends Component
  
     public function render()
     {
+        $answers = DB::table('answers')     
+        ->select(
+            'answers.id as id', 
+            'answers.created_at as fecha',
+            'answers.answer as answer'
+            
+        )
+        >orderBy('fecha', 'desc');
+
         
-        $questions = Question::all();
-        // dd($questions);
-        return view('livewire.question',compact('questions'));
+        // $questions = Question::all();
+        // // dd($questions);
+        return view('livewire.question',compact('answers'));
 
     }
     public function showModal(){

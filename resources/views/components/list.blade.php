@@ -1,3 +1,6 @@
-<ul class="divide-y divide-black">
+
+<ul class="divide-y divide-black ">
   {{ $slot }}
 </ul>
+
+

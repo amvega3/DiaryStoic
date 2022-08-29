@@ -1,5 +1,5 @@
-<div>
-    <button class="bg-red-900 px-2 py-2 mx-auto border border-black rounded-xl " wire:click="$set('showingModal',true)">Ver</button>
+<!--
+   <button class="bg-green-900 px-2 py-2 mx-auto border border-black rounded-xl " wire:click="$set('showingModal',true)">Ver</button>
 
     <x-jet-dialog-modal wire:model="showingModal" >
         <x-slot name="title">
@@ -90,6 +90,4 @@ Pon lo que tu quieras
 
 
 
-
-
-</div>
+ -->

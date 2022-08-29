@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('subtitulo')->nullable();
-            $table->string('autor');
+            $table->foreignId('autor_id');
             $table->string('descripcion');
             $table->string('path_image')->nullable();
+            $table->string('like')->nullable();
+            $table->foreign('autor_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

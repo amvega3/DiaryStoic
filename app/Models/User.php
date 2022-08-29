@@ -33,6 +33,9 @@ class User extends Authenticatable
     public function answer() {
         return $this->hasOne('App\Models\Question');
       }
+      public function posts() {
+        return $this->hasMany('App\Models\Post','autor_id');
+      }
 
     /**
      * The attributes that should be hidden for serialization.

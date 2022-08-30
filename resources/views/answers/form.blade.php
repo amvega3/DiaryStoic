@@ -1,6 +1,6 @@
 <div>
     <!-- <button class="bg-green-900 px-2 py-2 mx-auto border fixed left-0 flex justify-center items-center border-black rounded-xl " wire:click="$set('showingModal',true)">Ver</button> -->
-    <x-jet-dialog-modal wire:model="showingModal">
+    <x-dialog-modal-black wire:model="showingModal">
         <x-slot name="title" class="bg-black">
             <h2 class="text-[#FFC600]"> Nota del dia</h2>
         </x-slot>
@@ -93,5 +93,5 @@
 
             </div>
         </x-slot>
-    </x-jet-dialog-modal>
+    </x-dialog-modal-black>
 </div>

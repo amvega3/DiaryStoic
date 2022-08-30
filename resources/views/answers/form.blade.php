@@ -17,7 +17,8 @@
                 </div>
                 <input
                     class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
-                    type="text" name="answer" wire:model='answers1' id="answer"><br>
+                    type="text" require name="answer" wire:model='answers1' id="answer"><br>
+                    @error('answers1') <span class="error text-red-900">{{ $message }}</span> @enderror
                 <!-- <input class="appearance-none block w-full bg-[#FFC600] text-[#FFC600] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control" type="num" name="question_id" value="{{ isset($answer->question_id) ? $answer->qiestion_id : '' }}" id="question_id"><br> -->
 
                 <!-- pregunta 2 -->
@@ -30,7 +31,8 @@
 
                     <input
                         class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
-                        type="text" name="answer" wire:model='answers2' id="answer"><br>
+                        type="text" require name="answer" wire:model='answers2' id="answer"><br>
+                        @error('answers2') <span class="error text-red-900">{{ $message }}</span> @enderror
                     <!-- <input class="appearance-none block w-full bg-[#FFC600] text-[#FFC600] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control" type="num" name="question_id" value="{{ isset($answer->question_id) ? $answer->qiestion_id : '' }}" id="question_id"><br> -->
                 </div>
                 <!-- pregunta3 -->
@@ -43,7 +45,8 @@
 
                     <input
                         class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
-                        type="text" name="answer" wire:model='answers3' id="answer"><br>
+                        type="text" require name="answer" wire:model='answers3' id="answer"><br>
+                        @error('answers3') <span class="error text-red-900">{{ $message }}</span> @enderror
                     <!-- <input class="appearance-none block w-full bg-[#FFC600] text-[#FFC600] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control" type="num" name="question_id" value="{{ isset($answer->question_id) ? $answer->qiestion_id : '' }}" id="question_id"><br> -->
                 </div>
                 <!-- pregunta 4 -->
@@ -58,7 +61,8 @@
 
                     <input
                         class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
-                        type="text" name="answer" wire:model='answers4' id="answer"><br>
+                        type="text" require name="answer" wire:model='answers4' id="answer"><br>
+                        @error('answers4') <span class="error text-red-900">{{ $message }}</span> @enderror
                     <!-- <input class="appearance-none block w-full bg-[#FFC600] text-[#FFC600] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control" type="num" name="question_id" value="{{ isset($answer->question_id) ? $answer->qiestion_id : '' }}" id="question_id"><br> -->
                 </div>
                 <!-- pregunta 5 -->
@@ -66,13 +70,14 @@
                 <div class="form-group">
                     <label class="block uppercase tracking-wide text-[#FFC600] text-xs font-bold mb-2" for="answer">
 
-                        Pon lo que tu quieras
+                        Define tu día en una frase 
 
                                </label>
 
                     <input
                         class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
-                        type="text" name="answer" wire:model='answers5' id="answer"><br>
+                        type="text" required name="answer" wire:model='answers5' id="answer"><br>
+                        @error('answers5') <span class="error text-red-900 ">{{ $message }}</span> @enderror
                     <!-- <input class="appearance-none block w-full bg-[#FFC600] text-[#FFC600] border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control" type="num" name="question_id" value="{{ isset($answer->question_id) ? $answer->qiestion_id : '' }}" id="question_id"><br> -->
                 </div>
 

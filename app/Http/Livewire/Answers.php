@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Answer;
+use App\Models\Question;
 
 class Answers extends Component
 {
@@ -11,6 +12,7 @@ class Answers extends Component
     public $showingModal_answers = false;
     public $message = '';
     public $answer_All;
+    public $ques;
     public $listeners = [
         'hideMe' => 'hideModal'
     ];
@@ -20,10 +22,26 @@ class Answers extends Component
     }
 
     public $answers1, $answers2, $answers3, $answers4, $answers5;
+    protected $rules = [
+
+        'answers1'  => 'required',
+        'answers2' => 'required',
+        'answers3'  => 'required',
+        'answers4'  => 'required',
+        'answers5'  => 'required',
+    ];
+    protected $messages = [
+
+        'answers1.required'  => 'Esta pregunta es requerida',
+        'answers2.required'  => 'Esta pregunta es requerida ',
+        'answers3.required'  => 'Esta pregunta es requerida ',
+        'answers4.required'  => 'Esta pregunta es requerida',
+        'answers5.required'  => 'Esta pregunta es requerida'
+    ];
     public function render()
     {
         $answers = Answer::all();
-
+        $questions= Question::all();
         if ($this->showingModal_answers) {
             $data = $this->answer_All;
 
@@ -33,8 +51,9 @@ class Answers extends Component
 
             $data = null;
         }
+        // dd($question);
 
-        return view('livewire.answers',compact('answers','data'));
+        return view('livewire.answers',compact('answers','data','questions'));
 
     }
     public function showModal(){
@@ -46,9 +65,12 @@ class Answers extends Component
         $this->showingModal_answers = !$this->showingModal_answers;
 
     }
+    
     public function store()
     {
-        // $this->validate();
+        
+        $this->validate();
+        $this->showingModal = false;
         Answer::create([
             'user_id'=> auth()->user()->id,
             'answer' => $this->answers1,

@@ -29,7 +29,7 @@
     <!-- @include('answers.allAnswers') -->
 
     @if ($showingModal_answers == true)
-        <x-jet-dialog-modal wire:model="showingModal_answers">
+        <x-dialog-modal-black wire:model="showingModal_answers">
 
             <x-slot name="title">
                 Notal del dia -
@@ -51,6 +51,6 @@
             <x-slot name="footer">
             </x-slot>
 
-        </x-jet-dialog-modal>
+        </x-dialog-modal-black>
     @endif
 </div>

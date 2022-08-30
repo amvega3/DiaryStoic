@@ -1,16 +1,21 @@
 <div>
-
+    <h1 class="text-white">{{$like}}</h1>
     <main class="w-full bg-transparent flex items-center justify-center">
         <div class="border max-w-screen-md bg-white mt-6 rounded-2xl p-4">
 
-            <h1>{{ $posts }}</h1>
             <div class="flex items-center	justify-between">
                 <div class="gap-3.5	flex items-center ">
-                    <img src="https://images.unsplash.com/photo-1617077644557-64be144aa306?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
-                        class="object-cover bg-yellow-500 rounded-full w-10 h-10" />
+                    @if ($post->user->profile_photo_path == null)
+                    <img src="{{$post->user->profile_photo_url}}"
+                    class="object-cover bg-yellow-500 rounded-full w-10 h-10}}" />
+                   @else
+                   <img src="{{ asset('$post->user->profile_photo_path') }}"
+                   class="object-cover bg-yellow-500 rounded-full w-10 h-10}}" />
+                   @endif
+
                     <div class="flex flex-col">
-                        <b class="mb-2 capitalize">sofia müller</b>
-                        <time datetime="06-08-21" class="text-gray-400 text-xs">06 August at 09.15 PM
+                        <b class="mb-2 capitalize">{{$post->user->name}}</b>
+                        <time datetime="06-08-21" class="text-gray-400 text-xs">{{$post->created_at}}
                         </time>
                     </div>
                 </div>
@@ -21,12 +26,11 @@
                     </svg>
                 </div>
             </div>
-            <div class="whitespace-pre-wrap mt-7">Hello guys ?</div>
+            <div class="whitespace-pre-wrap mt-7">{{$post->descripcion}}</div>
             <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap	">
-                <img src="https://images.unsplash.com/photo-1610147323479-a7fb11ffd5dd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-                    class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
-                <img src="https://images.unsplash.com/photo-1614914135224-925593607248?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-                    class="bg-red-500 rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
+                <img alt="404" src="{{ asset($post->path_image) }}"
+                    class="bg-transparent bg-cover rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
+
             </div>
             <div class=" h-16 border-b  flex items-center justify-around	">
                 <div class="flex items-center	gap-3	">
@@ -56,8 +60,9 @@
                     </svg>
                     <div class="text-sm	">10 Comments</div>
                 </div>
+                {{$title}}
                 <div class="flex items-center	gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 {{$like ? 'text-green-500' : 'text-red-600'}}" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                     </svg>
                     <div class="text-sm">5 Likes</div>

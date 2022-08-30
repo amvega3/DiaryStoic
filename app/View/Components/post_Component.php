@@ -7,15 +7,16 @@ use Illuminate\View\Component;
 
 class post_Component extends Component
 {
-    public $posts = 'hola';
+    public $titulo = 'hola';
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Post $posts)
+    public function __construct(Post $posts , $titulo)
     {
         $this->posts = $posts;
+        $this->titulo = $titulo;
         //
     }
 

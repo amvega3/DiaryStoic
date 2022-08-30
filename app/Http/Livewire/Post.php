@@ -7,8 +7,9 @@ use Livewire\Component;
 
 class Post extends Component
 {
-    public $title , $subtitle , $author , $description , $path_image;
-    public function render()
+    public $title = 'test' , $subtitle , $author , $description , $path_image;
+    public $like = false;
+        public function render()
     {
         $posts = ModelsPost::all();
         return view('livewire.post', compact('posts'));

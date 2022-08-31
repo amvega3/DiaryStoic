@@ -1,6 +1,6 @@
 
-<nav x-data="{ open: false }" class="bg-[#FFC600]   border-t-2 fixed left-0 flex justify-center items-center
-text-white text-2xl  bottom-0 bg-opacity-70 h-28 pt-2 w-full border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-[#FFC600]   border fixed left-0 flex justify-center items-center
+text-black text-2xl  bottom-0  h-22 p-2  w-full >
 <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -8,15 +8,20 @@ text-white text-2xl  bottom-0 bg-opacity-70 h-28 pt-2 w-full border-b border-gra
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden text-white space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link class="text-fuchsia-100 text-2xl" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('HOME') }}
+                    <img src="{{ asset('img/post.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
+
                     </x-jet-nav-link>
+                    <x-jet-nav-link class="text-fuchsia-100 text-2xl" href="{{ route('answers') }}" :active="request()->routeIs('answers')">
+                    <img src="{{ asset('img/list.png') }}" width="50" height="50" class="d-inline-block align-top" alt=""><br>
+                    <!-- <span class="text-sm"> Publicaciones</span>    -->
+                </x-jet-nav-link>
                     <x-jet-nav-link class="text-fuchsia-100 text-2xl" href="{{ route('roles') }}" :active="request()->routeIs('roles')">
                         {{ __('ROLES') }}
                     </x-jet-nav-link>
@@ -61,7 +66,7 @@ text-white text-2xl  bottom-0 bg-opacity-70 h-28 pt-2 w-full border-b border-gra
                                         </x-jet-dropdown-link>
                                     @endcan
 
-                                    <div class="border-t border-gray-100"></div>
+                                  
 
                                     <!-- Team Switcher -->
                                     <div class="block px-4 py-2 text-xs text-gray-400">

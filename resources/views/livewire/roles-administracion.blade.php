@@ -7,24 +7,24 @@
 
 
     <div class="text-white" x-cloak>
-        <div x-show="!open" class="font-normal uppercase tracking-wide w-full text-2xl  rounded p-2 bg-transparent">
+        <div x-show="!open" class="font-normal uppercase tracking-wide w-full text-2xl  text-[#FFC600] rounded p-2 bg-transparent">
             Lista de Roles
         </div>
-        <div x-show="add" class="font-normal uppercase tracking-wide w-full text-2xl  rounded p-2 bg-transparent">
+        <div x-show="add" class="font-normal uppercase tracking-wide w-full text-2xl  text-[#FFC600] rounded p-2 bg-transparent">
             Agregar Rol
         </div>
-        <div x-show="edit" class="font-normal uppercase tracking-wide w-full text-2xl  rounded p-2 bg-transparent">
+        <div x-show="edit" class="font-normal uppercase tracking-wide w-full text-2xl text-[#FFC600] rounded p-2 bg-transparent">
             Editar Rol
         </div>
         <div class="m-3 p-1 shadow-cyan-200 w-full mx-auto overflow-hidden bg-transparent rounded-lg shadow min-w-max-content">
             <div class="max-w-7xl px-2 mx-auto mb-1 overflow-hidden bg-transparent ">
                 <div class="flex m-2 aspect-auto">
                     <div class="flex-none">
-                        <button class="bg-[#9c182f] border px-4 py-1 uppercase tracking-tighter rounded text-white hover:bg-[#be1935] " x-on:click="open = !open, for_edit = !for_edit , add = !add"
+                        <button class="bg-[#FFC600] border px-4 py-1 uppercase tracking-tighter rounded text-black hover:bg-[#FFC600] " x-on:click="open = !open, for_edit = !for_edit , add = !add"
                             x-show="!for_edit">+</button>
                     </div>
                     <div class="grow rounded  " x-show="!open">
-                        <input class="w-full h-9 mx-2 rounded" wire:model="search" type="text" placeholder="Buscar Rol..." />
+                        <input class="w-full h-9 mx-2 rounded bg-transparent placeholder-white text-[#FFC600]" wire:model="search" type="text" placeholder="Buscar Rol..." />
                     </div>
                 </div>
 
@@ -33,10 +33,10 @@
                         <div class="bg-transparent text-slate-100 border m-2 p-2 grid grid-cols-2 rounded shadow-md text-center">
                             <div class="flex-auto flex m-2 w-3/4">
                                 <label class="font-semibold block w-32 m-2 ">
-                                    <span for="id" class="m-2 text-left  form-label ">NOMBRE</label>
+                                    <span for="id" class="m-2 text-left text-sm form-label ">NOMBRE</label>
                                 <input wire:model="name" name="name" type="text" placeholder="Ingrese un nombre..." class="w-full p-2 text-black rounded form-input" required>
                                 @error('name')
-                                    <div class="text-red-700">
+                                    <div class="text-[#FFC600]">
                                         <span class="error">{{ $message }}</span>
                                     </div>
                                 @enderror
@@ -44,10 +44,10 @@
                             </div>
                             <div class="flex-auto flex m-2 w-3/4">
                                 <label class="font-semibold block w-32 m-2 ">
-                                    <span for="id" class="m-2 text-left  form-label ">DESCRIPCIÓN </label>
+                                    <span for="id" class="m-2 text-left text-sm form-label ">DESCRIPCIÓN </label>
                                 <input wire:model="guard_name" name="guard_name" type="text" placeholder="Ingrese una descripción ..." class="w-full p-2 text-black rounded form-input" required>
                                 @error('guard_name')
-                                    <div class="text-red-700">
+                                    <div class="text-[#FFC600]">
                                         <span class="error">{{ $message }}</span>
                                     </div>
                                 @enderror
@@ -59,10 +59,10 @@
                     @if ($accion == 'store')
                         <div class="bg-transparent text-slate-900  m-2 p-2  shadow-md text-center">
                             <button wire:click="default" x-on:click="open = !open , for_edit =!for_edit ,add = !add"
-                                class="text-gray-500 bg-transparent hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-6 py-3 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 ">
+                                class="text-bg-[#FFC600]bg-transparent hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-6 py-3 hover:text-gray-900 focus:z-10 dark:bg-black dark:text-[#FFC600] dark:border-gray-500 dark:hover:text-white dark:hover:bg-black ">
                                 CANCELAR</button>
                             <button wire:click="store" x-on:click="open = !open , for_edit =!for_edit , add = !add"
-                                class="text-white bg-red-800 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-6 py-3 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">AGREGAR</button>
+                                class="text-black bg-[#FFC600] hover:bg-[#FFC600] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-6 py-3 text-center dark:bg-[#FFC600] dark:hover:bg-[#FFC600] dark:focus:ring-[#FFC600]">AGREGAR</button>
                         </div>
                     @else
                         <div class="bg-transparent text-slate-900  m-2 p-2 shadow-md text-center">
@@ -70,7 +70,7 @@
                                 class="text-gray-500 bg-transparent hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-6 py-3 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 ">
                                 CANCELAR</button>
                             <button wire:click="update" x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
-                                class="text-white bg-red-800 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-6 py-3 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">EDITAR</button>
+                                class="text-black bg-[#FFC600]0 hover:bg-[#FFC600] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-6 py-3 text-center dark:bg-[#FFC600] dark:hover:bg-[#FFC600] dark:focus:ring-[#FFC600]">EDITAR</button>
                         </div>
                     @endif
 
@@ -81,24 +81,24 @@
                         <table class="w-full mx-auto overflow-x-auto bg-transparent shadow min-w-max-content ">
                             <thead class="border-b border-gray-200 bg-gray-600">
                                 <tr class="text-xs text-justify text-gray-200">
-                                    <th class="px-4 py-3">NOMBRE</th>
-                                    <th class="px-4 py-3">DESCRIPCIÓN</th>
-                                    <th class="px-4 py-3">ACCIÓN</th>
+                                    <th class="px-4 py-3 text-[#FFC600]">NOMBRE</th>
+                                    <th class="px-4 py-3 text-[#FFC600]">DESCRIPCIÓN</th>
+                                    <th class="px-4 py-3 text-[#FFC600]">ACCIÓN</th>
                                 </tr>
                             </thead>
                             <tbody class="items-center w-full mx-auto divide-y divide-gray-300">
                                 @foreach ($roles as $role)
                                     <tr class="text-xs  text-justify mx-auto p-2 text-gray-100">
-                                        <td class="px-4 py-3 text-xs  text-justify">{{ $role->name }}</td>
-                                        <td class="px-4 py-3 text-xs  text-justify">{{ $role->description }}</td>
-                                        <td class="px-4 py-3 text-xs whitespace-nowrap text-justify">
+                                        <td class="px-4 py-3 text-xl  text-justify">{{ $role->name }}</td>
+                                        <td class="px-4 py-3 text-xl  text-justify">{{ $role->description }}</td>
+                                        <td class="px-4 py-3 text-xl whitespace-nowrap text-justify">
                                             <button wire:click="edit({{ $role }})" x-on:click="open = !open , for_edit = !for_edit , edit = !edit"
-                                                class="btn bg-[#9c182f] border px-4 py-1 uppercase tracking-tighter rounded text-white hover:bg-[#be1935]">EDITAR</button>
+                                                class="btn bg-[#FFC600] border px-4 py-1 uppercase tracking-tighter rounded text-black hover:bg-[#FFC600]">EDITAR</button>
                                             <button wire:click="asignar({{ $role }})"
-                                                class="btn bg-[#9c182f] border px-4 py-1 uppercase tracking-tighter rounded text-white hover:bg-[#be1935]">PERMISOS</button>
+                                                class="btn bg-[#FFC600] border px-4 py-1 uppercase tracking-tighter rounded text-black hover:bg-[#FFC600]">PERMISOS</button>
 
                                             <button wire:click="destroy({{ $role }})"
-                                                class="btn bg-[#9c182f] border px-4 py-1 uppercase tracking-tighter rounded text-white hover:bg-[#be1935]">ELIMINAR</button>
+                                                class="btn bg-[#FFC600] border px-4 py-1 uppercase tracking-tighter rounded text-black hover:bg-[#FFC600]">ELIMINAR</button>
                                         </td>
                                     </tr>
                                 @endforeach

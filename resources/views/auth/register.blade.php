@@ -10,22 +10,22 @@
             @csrf
 
             <div>
-                <x-jet-label class="text-black text-xl text-xs font-bold mb-2" for="name" value="{{ __('Nombres') }}" />
+                <x-jet-label class="text-black text-xl font-bold mb-2" for="name" value="{{ __('Nombres') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label class="text-black text-xl text-xs font-bold mb-2" for="email" value="{{ __('Correo electronico') }}" />
+                <x-jet-label class="text-black text-xl font-bold mb-2" for="email" value="{{ __('Correo electrónico') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label class="text-black text-xl text-xs font-bold mb-2" for="password" value="{{ __('Contraseña') }}" />
+                <x-jet-label class="text-black text-xl font-bold mb-2" for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label class="text-black text-xl text-xs font-bold mb-2" for="password_confirmation" value="{{ __('Confirmar contraseña') }}" />
+                <x-jet-label class="text-black text-xl font-bold mb-2" for="password_confirmation" value="{{ __('Confirmar contraseña') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 

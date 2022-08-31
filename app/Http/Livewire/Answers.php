@@ -40,7 +40,7 @@ class Answers extends Component
     ];
     public function render()
     {
-        $answers = Answer::all();
+        $answers = Answer::where('user_id', auth()->user()->id)->get();
         $questions= Question::all();
         if ($this->showingModal_answers) {
             $data = $this->answer_All;
@@ -65,10 +65,10 @@ class Answers extends Component
         $this->showingModal_answers = !$this->showingModal_answers;
 
     }
-    
+
     public function store()
     {
-        
+
         $this->validate();
         $this->showingModal = false;
         Answer::create([

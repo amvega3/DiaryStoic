@@ -1,4 +1,16 @@
 <div class="bg-black">
+    @if (Session::has('message'))
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            Swal.fire({
+                title: 'Ok!',
+                text: '{{ session('message') }}',
+                icon: 'success',
+                showConfirmButton: false
+            })
+        </script>
+    @endif
     <div class="mx-auto max-w-7xl p-2">
         <div class="bg-transparent	rounded-full h-3.5 flex	items-center mt-3 justify-center">
             @can('EditarPosts.edit')

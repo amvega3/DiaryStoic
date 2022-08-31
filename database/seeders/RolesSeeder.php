@@ -2,10 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Seeder;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class RolesSeeder extends Seeder
 {
@@ -22,6 +26,19 @@ class RolesSeeder extends Seeder
         'description' => 'Lector']) ; //
         $role3 = Role::create(['name' => 'Editor',
         'description' => 'Editor']) ; //
+
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'ADMIN@espe.com',
+            'password' => bcrypt('admin'),
+
+        ])->assignRole('Administrador');
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'LECTOR@espe.com',
+            'password' => bcrypt('admin'),
+
+        ])->assignRole('Lector');
 
         Permission::create(['name' => 'ListarPosts.index', 'description' => 'Listar Posts'])->syncRoles($role2, $role1, $role3);
         Permission::create(['name' => 'EditarPosts.edit', 'description' => 'Editar Posts'])->syncRoles($role1);

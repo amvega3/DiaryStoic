@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-       
+
 
         <x-jet-validation-errors class="mb-4 w-52 h-52" />
 
@@ -17,7 +17,7 @@
             @csrf
 
             <div>
-                <x-jet-label class="text-black text-xl text-xs font-bold mb-2" for="email" value="{{ __('Correo electronico') }}" />
+                <x-jet-label class="text-black text-xl text-xs font-bold mb-2" for="email" value="{{ __('Correo electrónico') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full " type="email" name="email" :value="old('email')" required autofocus />
             </div>
 

@@ -18,7 +18,7 @@
         <div class="container grid grid-cols-1">
             <div class="flex pt-2 justify-center">
                 <a class="p-3 text-base uppercase font-bold tracking-widest hover:text-white" :class="{ 'text-gray-500': active != 0 }" href="#" @click.prevent="changeActive(0)">Filósofos</a>
-                <a class="p-3 text-base uppercase font-bold tracking-widest hover:text-white" :class="{ 'text-gray-600': active != 1 }" href="#" @click.prevent="changeActive(1)">People</a>
+                <a class="p-3 text-base uppercase font-bold tracking-widest hover:text-white" :class="{ 'text-gray-600': active != 1 }" href="#" @click.prevent="changeActive(1)"></a>
             </div>
 
             <div class="row-start-2 col-start-1" x-show="active == 0" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-90"
@@ -39,10 +39,7 @@
                             x-transition:enter-start="opacity-0 transform translate-y-12" x-transition:enter-end="opacity-100 transform translate-y-0"
                             x-transition:leave="transition ease-out duration-300" x-transition:leave-start="opacity-100 transform translate-y-0"
                             x-transition:leave-end="opacity-0 transform -translate-y-12">EPICTETO</h1>
-                        <h1 class="absolute md:text-5xl text-xl uppercase font-black tracking-widest" x-show="active == 3" x-transition:enter="transition ease-out duration-300"
-                            x-transition:enter-start="opacity-0 transform translate-y-12" x-transition:enter-end="opacity-100 transform translate-y-0"
-                            x-transition:leave="transition ease-out duration-300" x-transition:leave-start="opacity-100 transform translate-y-0"
-                            x-transition:leave-end="opacity-0 transform -translate-y-12">Orange</h1>
+
                     </div>
 
 
@@ -56,9 +53,7 @@
                         <div class="w-3/5 px-2">
                             <img class="h-64" src="https://pymstatic.com/85727/conversions/epicteto-thumb.jpg" loading="lazy">
                         </div>
-                        <div class="w-3/5 px-2">
-                            <img class="h-64" src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80" loading="lazy">
-                        </div>
+                        
                     </div>
                 </div>
             </div>

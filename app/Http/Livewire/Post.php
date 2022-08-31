@@ -56,6 +56,8 @@ class Post extends Component
         ]);
         $this->photo->storeAs('public/images', $this->photo->getClientOriginalName());
         $this->add = false;
+        session()->flash('message', 'Post creado Correctamente');
+
     }
     public function updateLike(ModelsPost $post)
     {
@@ -66,7 +68,7 @@ class Post extends Component
 
         } else {
             $like = $post->like - 1;
-            
+
         }
     }
     public function destroy(ModelsPost $post)

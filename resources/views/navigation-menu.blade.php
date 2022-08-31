@@ -1,5 +1,5 @@
 
-<nav x-data="{ open: false }" class="bg-[#FFC600] rounded-xl pr-2 pl-2 pb-4  border fixed  left-0 flex 
+<nav x-data="{ open: false }" class="bg-[#FFC600] rounded-xl  pr-2 pl-2 pb-4  border fixed  left-0 flex 
 text-black text-2xl  bottom-0  h-22 p-2  w-full ">
 <!-- Primary Navigation Menu -->
 <div class="shrink-0 flex pt-2 w-11 h-11">
@@ -7,17 +7,17 @@ text-black text-2xl  bottom-0  h-22 p-2  w-full ">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <div class="max-w-7xl mx-auto px-4 grid-rows-4 pr-6 sm:px-6 lg:px-8 ">
         
         <div class="flex justify-between h-16 ">
        
             <div class="flex">
                 <!-- Logo -->                
                 <!-- Navigation Links -->
-                <div class="hidden text-white space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden text-white grid-rows-3 space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link class="text-fuchsia-100  text-2xl" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     <div class="grid-cols-2 ">
-                    <img src="{{ asset('img/post.png') }}" width="50" height="50" class="d-inline-block justify-center align-top" alt="">
+                    <img src="{{ asset('img/post.png') }}" width="50" height="50" class="d-inline-block  p-5justify-center align-top" alt="">
                     <p class="text-center text-black text-sm">Publicaciones</p>    
                 </div>
 
@@ -34,12 +34,7 @@ text-black text-2xl  bottom-0  h-22 p-2  w-full ">
                     <p class="text-center text-black text-sm">Roles</p>
                     </div>
                     </x-jet-nav-link>
-                    <x-jet-nav-link class="text-fuchsia-100 text-2xl" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    <div class="grid-cols-2 justify-center">
-                    <img src="{{ asset('img/permiso.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
-                    <p class="text-center text-black text-sm">Permisos</p>    
-                </div>    
-                </x-jet-nav-link>
+                   
                 </div>
             </div>
 

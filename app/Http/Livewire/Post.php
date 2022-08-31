@@ -14,10 +14,17 @@ class Post extends Component
 
     public $photo;
     public $title = 'test', $subtitle, $author, $description, $path_image;
-    public $like = false, $add = false;
+    public $like = false, $add = false, $likeFlag = false;
+
     public function render()
     {
-        $posts = ModelsPost::all();
+        $userActual = auth()->user()->id;
+        $posts = ModelsPost::select("*")
+        ->orderBy("titulo", "desc")
+        ->get();
+
+
+
         return view('livewire.post', compact('posts'));
     }
     public function updatedPhoto()
@@ -50,27 +57,21 @@ class Post extends Component
         $this->photo->storeAs('public/images', $this->photo->getClientOriginalName());
         $this->add = false;
     }
-    public function updateLike(ModelsPost $post){
+    public function updateLike(ModelsPost $post)
+    {
         $this->like = !$this->like;
-
+        $this->likeFlag = true;
         if ($this->like) {
-            $like = $post->like + 1 ;
-            $post->update([
-                'like' => $like
-            ]);
-        }
-        else
-        {
-            $like = $post->like - 1 ;
-            $post->update([
-                'like' => $like
-            ]);
+            $like = $post->like + 1;
+
+        } else {
+            $like = $post->like - 1;
+            
         }
     }
     public function destroy(ModelsPost $post)
     {
-        $delete = Storage::disk('public')->delete('/images/'.$post->path_image);
-
+        $delete = Storage::disk('public')->delete('/images/' . $post->path_image);
         return $post->delete();
     }
 }

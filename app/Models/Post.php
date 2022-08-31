@@ -21,7 +21,7 @@ class Post extends Model
     public function user(){
         return $this->belongsTo('App\Models\User','autor_id');
     }
-    public function likes(){
-        return $this->belongsToMany('App\Models\Post','autor_id');
+    public function users(){
+        return $this->belongsToMany('App\Models\User','userlikes');
     }
 }

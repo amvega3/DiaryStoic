@@ -12,9 +12,7 @@ text-black text-2xl  bottom-0  h-22 p-2  w-full ">
         <div class="flex justify-between h-16 ">
        
             <div class="flex">
-                <!-- Logo -->
-                
-                
+                <!-- Logo -->                
                 <!-- Navigation Links -->
                 <div class="hidden text-white space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link class="text-fuchsia-100  text-2xl" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">

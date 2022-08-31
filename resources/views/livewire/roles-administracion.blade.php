@@ -4,9 +4,34 @@
             display: none !important;
         }
     </style>
+    @if (Session::has('message'))
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            Swal.fire({
+                title: 'Ok!',
+                text: '{{ session('message') }}',
+                icon: 'success',
+                showConfirmButton: false
+            })
+        </script>
+    @endif
+    @if (Session::has('messageW'))
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            Swal.fire({
+                title: 'Advertencia !',
+                text: '{{ session('messageW') }}',
+                icon: 'warning',
+                showConfirmButton: false
+            })
+        </script>
+    @endif
 
 
     <div class="text-white" x-cloak>
+
         <div x-show="!open" class="font-normal uppercase tracking-wide w-full text-2xl  rounded p-2 bg-transparent">
             Lista de Roles
         </div>
@@ -16,6 +41,7 @@
         <div x-show="edit" class="font-normal uppercase tracking-wide w-full text-2xl  rounded p-2 bg-transparent">
             Editar Rol
         </div>
+
         <div class="m-3 p-1 shadow-cyan-200 w-full mx-auto overflow-hidden bg-transparent rounded-lg shadow min-w-max-content">
             <div class="max-w-7xl px-2 mx-auto mb-1 overflow-hidden bg-transparent ">
                 <div class="flex m-2 aspect-auto">

@@ -6,6 +6,7 @@ use Livewire\Component;
 use Spatie\Permission\Models\Role;
 use Livewire\WithPagination;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Http\Request;
 
 class RolesAdministracion extends Component
 {
@@ -91,6 +92,9 @@ class RolesAdministracion extends Component
         ]);
 
         $this->reset(['name', 'guard_name', 'accion']);
+        session()->flash('message', 'Rol creado Correctamente');
+
+
     }
     public function edit(Role $role)
     {
@@ -116,7 +120,10 @@ class RolesAdministracion extends Component
     }
     public function destroy(Role $role)
     {
+        session()->flash('messageW', 'Rol Eliminado...');
         $role->delete();
+
+
     }
 }
 

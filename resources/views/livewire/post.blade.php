@@ -1,5 +1,16 @@
 <div class="bg-black">
     <div class="mx-auto max-w-7xl p-2">
+        <div class="bg-transparent	rounded-full h-3.5 flex	items-center mt-3 justify-center">
+            <button wire:click='$set("add",true)'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-white hover:text-green-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+            {{-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="34px" fill="#92929D">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+            </svg> --}}
+        </div>
         @foreach ($posts as $post)
             <div>
                 <h1 class="text-white">{{ $like }}</h1>
@@ -20,19 +31,28 @@
                                     </time>
                                 </div>
                             </div>
-                            <div class="bg-gray-100	rounded-full h-3.5 flex	items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="34px" fill="#92929D">
+                            <div class="bg-transparent	rounded-full h-3.5 flex	items-center mt-3 justify-center">
+                                <button wire:click='destroy({{$post}})'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                    </svg>
+
+                                </button>
+                                {{-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="34px" fill="#92929D">
                                     <path d="M0 0h24v24H0V0z" fill="none" />
                                     <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-                                </svg>
+                                </svg> --}}
                             </div>
-                        </div>
-                        <div class="whitespace-pre-wrap mt-7">{{ $post->descripcion }}</div>
-                        <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap	">
-                            <img alt="404" src="{{ asset($post->path_image) }}" class="bg-transparent bg-cover rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
 
                         </div>
-                        <div class=" h-16 border-b  flex items-center justify-around	">
+                        <div class="whitespace-pre-wrap text-gray-200 mt-7">{{ $post->descripcion }}</div>
+
+                        <div class="mt-5 flex gap-2	 justify-center border-b pb-4 flex-wrap	">
+                            <img alt="404" src="{{ asset('storage/images/'.$post->path_image) }}" class="bg-transparent bg-cover rounded-2xl w-1/3 object-cover h-96 flex-auto" alt="photo">
+
+                        </div>
+                        <div class=" h-16 border-b text-green-100  flex items-center justify-around	">
                             <div class="flex items-center	gap-3	">
                                 <svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="?-Social-Media" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -61,20 +81,23 @@
                                 <div class="text-sm	"> {{ $title }}</div>
                             </div>
 
+                            <div class="flex items-center text-white	gap-3">
 
-                            <div class="flex items-center	gap-3">
-                                <button wire:click="$set('like', {{$like ? false : true}})">
+                                <button wire:click='updateLike({{$post}})'>
                                     @if (!$like)
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 {{ $like ? 'text-purple-500' : 'text-red-50' }}">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                      </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            class="w-6 h-6 {{ $like ? 'text-purple-500' : 'text-red-50' }}">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                        </svg>
                                     @else
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 {{ $like ? 'text-purple-500' : 'text-red-50' }}" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                                    </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 {{ $like ? 'text-purple-500' : 'text-red-50' }}" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                clip-rule="evenodd" />
+                                        </svg>
                                     @endif
                                 </button>
-                                <div class="text-sm">5 Likes</div>
+                                <div class="text-sm"> {{$post->like}} likes</div>
                             </div>
 
                             <div class="flex items-center	gap-3">
@@ -144,8 +167,66 @@
                     </div>
                 </main>
             </div>
-
             {{-- <x-post_-component :post="$post" :like="$like" /> --}}
         @endforeach
     </div>
+    @if ($add)
+        <x-dialog-modal-black wire:model="add">
+            <x-slot name="title">
+                <h2 class="text-white">Nuevo Post</h2>
+            </x-slot>
+            <x-slot name="content">
+                <div class="bg-black">
+                    <!-- pregunta1  -->
+                    <div class="form-group ">
+                        <label class="block uppercase tracking-wide text-[#FFC600] text-xs font-bold mb-2" for="answer">
+                            Título
+                        </label>
+                    </div>
+                    <input
+                        class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
+                        type="text" name="answer" wire:model='title' id="answer">
+                        @error('title') <span class="error text-white">{{ $message }}</span> @enderror
+                    <div class="form-group ">
+                        <label class="block uppercase tracking-wide text-[#FFC600] text-xs font-bold mb-2" for="answer">
+                            Subtítulo
+                        </label>
+                    </div>
+                    <input
+                        class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
+                        type="text" name="answer" wire:model='subtitle' id="answer">
+                        @error('subtitle') <span class="error text-white">{{ $message }}</span> @enderror
+                    <label class="block uppercase tracking-wide text-[#FFC600] text-xs font-bold mb-2" for="answer">
+                        Descripcion
+                    </label>
+                    <input
+                        class="appearance-none block w-full bg-[#FFC600] font-bold text-amber-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-black focus:border-gray-500 form-control"
+                        type="text" name="answer" wire:model='description' id="answer">
+                        @error('description') <span class="error text-white">{{ $message }}</span> @enderror
+                    <label class="block uppercase tracking-wide text-[#FFC600] text-xs font-bold mb-2" for="answer">
+                        Imagen
+                    </label>
+                    <form wire:submit.prevent="save">
+                        @if ($photo)
+                            Photo Preview:
+                            <img src="{{ $photo->temporaryUrl() }}">
+                        @endif
+                        <input type="file" wire:model="photo">
+
+
+                        @error('photo')
+                            <span class="error text-white">{{ $message }}</span>
+                        @enderror
+
+                        <button class="bg-green-400 px-2 py-2 rounded-xl" type="submit">Guardar</button>
+                    </form>
+                </div>
+
+            </x-slot>
+
+
+            <x-slot name="footer">
+            </x-slot>
+        </x-dialog-modal-black>
+    @endif
 </div>

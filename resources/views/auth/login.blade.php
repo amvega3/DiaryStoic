@@ -13,7 +13,7 @@
             <x-application-logo />
         </x-slot>
 
-        <form method="POST" action="{{ route('login') }}">
+        <form  method="POST" action="{{ route('login') }}">
             @csrf
 
             <div>
